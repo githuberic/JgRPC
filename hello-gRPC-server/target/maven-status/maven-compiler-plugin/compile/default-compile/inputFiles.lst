@@ -1,8 +1,0 @@
-/Users/guoqingliu/project/learning/java/gRPC_java/hello-gRPC-server/target/generated-sources/protobuf/java/com/lgq/grpc/hello/HelloReply.java
-/Users/guoqingliu/project/learning/java/gRPC_java/hello-gRPC-server/target/generated-sources/protobuf/grpc-java/com/lgq/grpc/hello/GreeterGrpc.java
-/Users/guoqingliu/project/learning/java/gRPC_java/hello-gRPC-server/target/generated-sources/protobuf/java/com/lgq/grpc/hello/HelloWorldProto.java
-/Users/guoqingliu/project/learning/java/gRPC_java/hello-gRPC-server/src/main/java/com/lgq/grpc/hello/server/HelloWorldServer.java
-/Users/guoqingliu/project/learning/java/gRPC_java/hello-gRPC-server/target/generated-sources/protobuf/java/com/lgq/grpc/hello/HelloRequest.java
-/Users/guoqingliu/project/learning/java/gRPC_java/hello-gRPC-server/src/main/java/com/lgq/grpc/hello/server/GreeterImpl.java
-/Users/guoqingliu/project/learning/java/gRPC_java/hello-gRPC-server/target/generated-sources/protobuf/java/com/lgq/grpc/hello/HelloReplyOrBuilder.java
-/Users/guoqingliu/project/learning/java/gRPC_java/hello-gRPC-server/target/generated-sources/protobuf/java/com/lgq/grpc/hello/HelloRequestOrBuilder.java
