@@ -27,9 +27,9 @@ public class MyGrpcServer {
     public static class GreetingServiceImpl extends GreetingServiceGrpc.GreetingServiceImplBase {
         @Override
         public void greeting(HelloRequest request, StreamObserver<HelloResponse> responseObserver) {
-            System.out.println(request);
+            System.out.println("Client value,"+request);
 
-            String greeting = "Hello there, " + request.getName();
+            String greeting = "Hello Client, " + request.getName() + ",From server";
 
             HelloResponse response = HelloResponse.newBuilder().setGreeting(greeting).build();
 
