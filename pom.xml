@@ -15,6 +15,7 @@
         <module>armeria-example</module>
         <module>hello-gRPC-client</module>
         <module>hello-gRPC-server</module>
+        <module>streaming-example</module>
     </modules>
 
     <properties>

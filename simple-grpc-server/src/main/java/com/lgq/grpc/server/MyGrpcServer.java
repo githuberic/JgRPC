@@ -15,8 +15,7 @@ import com.example.grpc.HelloResponse;
  */
 public class MyGrpcServer {
     static public void main(String[] args) throws IOException, InterruptedException {
-        Server server = ServerBuilder.forPort(8090)
-                .addService(new GreetingServiceImpl()).build();
+        Server server = ServerBuilder.forPort(8090).addService(new GreetingServiceImpl()).build();
 
         System.out.println("Starting server...");
         server.start();
