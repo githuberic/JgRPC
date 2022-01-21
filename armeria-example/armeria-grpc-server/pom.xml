@@ -15,17 +15,17 @@
         <dependency>
             <groupId>com.linecorp.armeria</groupId>
             <artifactId>armeria-grpc</artifactId>
-            <version>0.99.2</version>
+            <version>1.13.4</version>
         </dependency>
         <dependency>
             <groupId>io.projectreactor</groupId>
             <artifactId>reactor-core</artifactId>
-            <version>3.3.4.RELEASE</version>
+            <version>3.4.14</version>
         </dependency>
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-simple</artifactId>
-            <version>1.7.29</version>
+            <version>1.7.32</version>
             <scope>runtime</scope>
         </dependency>
     </dependencies>

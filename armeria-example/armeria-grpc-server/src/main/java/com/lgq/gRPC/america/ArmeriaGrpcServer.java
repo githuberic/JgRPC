@@ -32,6 +32,7 @@ public class ArmeriaGrpcServer {
         }));
 
         server.start().join();
+
         final InetSocketAddress localAddress = server.activePort().localAddress();
         final boolean isLocalAddress = localAddress.getAddress().isAnyLocalAddress() ||
                 localAddress.getAddress().isLoopbackAddress();
@@ -52,7 +53,7 @@ public class ArmeriaGrpcServer {
                         .enableUnframedRequests(true)
                         // You can set useBlockingTaskExecutor(true) in order to execute all gRPC
                         // methods in the blockingTaskExecutor thread pool.
-                        // .useBlockingTaskExecutor(true)
+                         .useBlockingTaskExecutor(false)
                         .build();
 
         return Server.builder()
@@ -63,14 +64,10 @@ public class ArmeriaGrpcServer {
                 // You can access the documentation service at http://127.0.0.1:8080/docs.
                 // See https://line.github.io/armeria/server-docservice.html for more information.
                 .serviceUnder("/docs", DocService.builder()
-                        .exampleRequestForMethod(HelloServiceGrpc.SERVICE_NAME,
-                                "Hello", exampleRequest)
-                        .exampleRequestForMethod(HelloServiceGrpc.SERVICE_NAME,
-                                "LazyHello", exampleRequest)
-                        .exampleRequestForMethod(HelloServiceGrpc.SERVICE_NAME,
-                                "BlockingHello", exampleRequest)
-                        .exclude(DocServiceFilter.ofServiceName(
-                                ServerReflectionGrpc.SERVICE_NAME))
+                        .exampleRequestForMethod(HelloServiceGrpc.SERVICE_NAME, "Hello", exampleRequest)
+                        .exampleRequestForMethod(HelloServiceGrpc.SERVICE_NAME, "LazyHello", exampleRequest)
+                        .exampleRequestForMethod(HelloServiceGrpc.SERVICE_NAME, "BlockingHello", exampleRequest)
+                        .exclude(DocServiceFilter.ofServiceName(ServerReflectionGrpc.SERVICE_NAME))
                         .build())
                 .build();
     }

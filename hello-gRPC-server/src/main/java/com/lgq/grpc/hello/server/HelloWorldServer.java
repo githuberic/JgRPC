@@ -10,6 +10,12 @@ import java.util.concurrent.TimeUnit;
  * @author lgq
  */
 public class HelloWorldServer {
+    public static void main(String[] args) throws IOException, InterruptedException {
+        final HelloWorldServer server = new HelloWorldServer();
+        server.start();
+        server.blockUntilShutdown();
+    }
+
     private Server server;
 
     private void start() throws IOException {
@@ -49,11 +55,5 @@ public class HelloWorldServer {
         if (server != null) {
             server.awaitTermination();
         }
-    }
-
-    public static void main(String[] args) throws IOException, InterruptedException {
-        final HelloWorldServer server = new HelloWorldServer();
-        server.start();
-        server.blockUntilShutdown();
     }
 }
