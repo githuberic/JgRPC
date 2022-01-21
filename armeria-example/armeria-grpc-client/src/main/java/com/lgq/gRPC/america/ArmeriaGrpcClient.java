@@ -23,7 +23,7 @@ public class ArmeriaGrpcClient {
     private static final Logger logger = LoggerFactory.getLogger(ArmeriaGrpcClient.class);
 
     public static void main(String[] args) throws InterruptedException {
-        final String uri = "gproto+http://127.0.0.1:8080/";
+        final String uri = "gproto+http://127.0.0.1:8091/";
 
         // Creates blocking gRPC client
         final HelloServiceBlockingStub blockingStub = Clients.newClient(uri, HelloServiceBlockingStub.class);

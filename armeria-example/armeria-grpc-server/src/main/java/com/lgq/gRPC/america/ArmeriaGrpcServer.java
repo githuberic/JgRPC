@@ -24,7 +24,7 @@ public class ArmeriaGrpcServer {
     private static final Logger logger = LoggerFactory.getLogger(ArmeriaGrpcServer.class);
 
     public static void main(String[] args) throws Exception {
-        final Server server = newServer(8080, 8443);
+        final Server server = newServer(8091, 443);
 
         Runtime.getRuntime().addShutdownHook(new Thread(() -> {
             server.stop().join();
@@ -35,12 +35,14 @@ public class ArmeriaGrpcServer {
         final InetSocketAddress localAddress = server.activePort().localAddress();
         final boolean isLocalAddress = localAddress.getAddress().isAnyLocalAddress() ||
                 localAddress.getAddress().isLoopbackAddress();
+
         logger.info("Server has been started. Serving DocService at http://{}:{}/docs",
                 isLocalAddress ? "127.0.0.1" : localAddress.getHostString(), localAddress.getPort());
     }
 
     static Server newServer(int httpPort, int httpsPort) throws Exception {
         final HelloRequest exampleRequest = HelloRequest.newBuilder().setName("Armeria").build();
+
         final HttpServiceWithRoutes grpcService =
                 GrpcService.builder()
                         .addService(new HelloServiceImpl())
