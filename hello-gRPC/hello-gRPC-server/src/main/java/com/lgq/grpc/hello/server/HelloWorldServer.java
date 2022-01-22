@@ -10,6 +10,7 @@ import java.util.concurrent.TimeUnit;
  * @author lgq
  */
 public class HelloWorldServer {
+
     public static void main(String[] args) throws IOException, InterruptedException {
         final HelloWorldServer server = new HelloWorldServer();
         server.start();
@@ -17,25 +18,23 @@ public class HelloWorldServer {
     }
 
     private Server server;
+    private int port = 50051;
 
     private void start() throws IOException {
-        int port = 50051;
         server = ServerBuilder.forPort(port)
                 .addService(new GreeterImpl())
                 .build()
                 .start();
         System.out.println("Server started, listening on " + port);
 
+        // jvm关闭前执行
         Runtime.getRuntime().addShutdownHook(new Thread(() -> {
-            // jvm关闭前执行
             System.err.println("*** shutting down gRPC server since JVM is shutting down");
-
             try {
                 HelloWorldServer.this.stop();
             } catch (InterruptedException e) {
-                e.printStackTrace(System.err);
+                // ignore ex
             }
-
             System.err.println("*** server shut down");
         }));
     }

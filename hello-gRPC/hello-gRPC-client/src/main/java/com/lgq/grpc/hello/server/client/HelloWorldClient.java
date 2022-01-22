@@ -16,6 +16,7 @@ import java.util.logging.Logger;
  * @author lgq
  */
 public class HelloWorldClient {
+
     private static final Logger logger = Logger.getLogger(HelloWorldClient.class.getName());
 
     /**
@@ -59,6 +60,7 @@ public class HelloWorldClient {
         // Access a service running on the local machine on port 50051
         String target = "localhost:50051";
         // Allow passing in the user and target strings as command line arguments
+
         if (args.length > 0) {
             if ("--help".equals(args[0])) {
                 System.err.println("Usage: [name [target]]");
@@ -81,6 +83,7 @@ public class HelloWorldClient {
                 // needing certificates.
                 .usePlaintext()
                 .build();
+
         try {
             HelloWorldClient client = new HelloWorldClient(channel);
             client.greet(user);
