@@ -10,11 +10,10 @@
     <packaging>pom</packaging>
 
     <modules>
-        <module>simple-grpc-client</module>
-        <module>simple-grpc-server</module>
         <module>armeria-example</module>
         <module>streaming-example</module>
         <module>hello-gRPC</module>
+        <module>simple-gRPC</module>
     </modules>
 
     <properties>
